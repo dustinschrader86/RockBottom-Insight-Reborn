@@ -35,6 +35,16 @@ export default function DashboardScreen() {
 >
   <Text style={styles.buttonText}>Test Screenshot Intake</Text>
 </TouchableOpacity>
+<TouchableOpacity 
+  style={styles.button} 
+  onPress={async () => {
+    const intake = await processScreenshot("fake-uri://test");
+    const analysis = await analyzeScreenshot(intake);
+    setData([analysis]);
+  }}
+>
+  <Text style={styles.buttonText}>Run Intelligence Engine</Text>
+</TouchableOpacity>
 
 const styles = StyleSheet.create({
   container: {
