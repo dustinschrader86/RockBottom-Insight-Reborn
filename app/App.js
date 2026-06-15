@@ -8,3 +8,5 @@ export default function App() {
       <RootNavigator />
       <StatusBar style="auto" />
     </NavigationContainer>
+  );
+}
