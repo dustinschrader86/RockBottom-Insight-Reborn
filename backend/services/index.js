@@ -1,4 +1,5 @@
-import { getStatus } from '../api';
+importimport { getAppInfo } from '../api';
+ { getStatus } from '../api';
 
 export const AppService = {
   checkBackend: () => getStatus(),
