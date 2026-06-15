@@ -1,20 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
-
-const Stack = createNativeStackNavigator();
+import RootNavigator from './navigation';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name="Home" 
-          component={HomeScreen}
-        />
-      </Stack.Navigator>
+      <RootNavigator />
       <StatusBar style="auto" />
     </NavigationContainer>
-  );
-}
