@@ -1,10 +1,28 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useAppStore } from '../store/useAppStore';
+import { pingBackend } from '../utils/backend';
 
 export default function DashboardScreen() {
+  const { data, setData } = useAppStore();
+
+  const checkBackend = () => {
+    const result = pingBackend();
+    setData([result]);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Dashboard</Text>
-      <Text style={styles.subtitle}>Your data engine will live here.</Text>
+
+      <TouchableOpacity style={styles.button} onPress={checkBackend}>
+        <Text style={styles.buttonText}>Ping Backend</Text>
+      </TouchableOpacity>
+
+      {data.length > 0 && (
+        <Text style={styles.result}>
+          {JSON.stringify(data[0])}
+        </Text>
+      )}
     </View>
   );
 }
@@ -20,10 +38,21 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
+    marginBottom: 20,
   },
-  subtitle: {
-    color: '#aaa',
-    marginTop: 10,
+  button: {
+    backgroundColor: '#1e90ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  result: {
+    color: '#0f0',
+    marginTop: 20,
     fontSize: 16,
   },
 });
