@@ -1,37 +1,16 @@
 {
-  "expo": {
-    "name": "Rockbottom Insight Reborn",
-    "slug": "rockbottom-insight-reborn",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./app/assets/icons/app-icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./app/assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#000000"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./app/assets/icons/adaptive-icon.png",
-        "backgroundColor": "#000000"
-      },
-      "permissions": []
-    },
-    "web": {
-      "favicon": "./app/assets/icons/favicon.png"
-    },
-    "plugins": [
-      "expo-secure-store",
-      "expo-notifications",
-      "expo-device",
-      "expo-file-system"
-    ]
+  "name": "rockbottom-insight-reborn",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "^51.0.0",
+    "react": "18.2.0",
+    "react-native": "0.74.0"
   }
 }
